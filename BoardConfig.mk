@@ -159,9 +159,6 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 #TARGET_USE_SDCLANG := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/recovery.fstab
-
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
@@ -174,12 +171,17 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libFNVfbEngineHAL.so|/system/vendor/lib/libshim_camera.so \
     /vendor/lib64/hw/gxfingerprint.default.so|fakelogprint.so:/vendor/lib64/hw/fingerprint.goodix.so|fakelogprint.so:/vendor/bin/gx_fpd|fakelogprint.so
 
+# Recovery
+ifneq ($(RECOVERY_VARIANT),twrp)
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/recovery.fstab
+endif
 
 # TWRP
 ifeq ($(RECOVERY_VARIANT),twrp)
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.twrp
 TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)/twrp
 TW_INCLUDE_CRYPTO := true
+TW_USE_TOOLBOX := true
 endif
 
 # RIL
