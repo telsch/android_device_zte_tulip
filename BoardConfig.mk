@@ -181,6 +181,7 @@ ifeq ($(RECOVERY_VARIANT),twrp)
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.twrp
 TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)/twrp
 TW_INCLUDE_CRYPTO := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TW_USE_TOOLBOX := true
 endif
 
