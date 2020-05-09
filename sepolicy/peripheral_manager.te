@@ -1,4 +1,6 @@
-allow per_mgr self:capability net_raw;
+# unknown type per_mgr
+# allow per_mgr self:capability net_raw;
 
-binder_use(per_mgr);
-binder_service(per_mgr);
+# unknown type per_mgr
+#binder_use(per_mgr);
+#binder_service(per_mgr);

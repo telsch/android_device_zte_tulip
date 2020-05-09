@@ -13,5 +13,6 @@ allow firmware_file rootfs:filesystem associate;
 type proc_wcnss_service, fs_type;
 
 # sysfs
-type sysfs_fingerprint, sysfs_type, fs_type;
-type sysfs_sensors, sysfs_type, fs_type;
+# Duplicate declaration of type
+#type sysfs_fingerprint, sysfs_type, fs_type;
+#type sysfs_sensors, sysfs_type, fs_type;

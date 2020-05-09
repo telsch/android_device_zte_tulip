@@ -1,5 +1,7 @@
-type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket1";
-type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket2";
-allow mm-qcamerad camera_socket:sock_file { create unlink write };
+# unknown type camera_socket used in transition definition
+#type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket1";
+#type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket2";
+# unknown type camera_socket
+#allow mm-qcamerad camera_socket:sock_file { create unlink write };
 
 allow mm-qcamerad camera_data_file:sock_file create;
